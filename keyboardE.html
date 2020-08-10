@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Event</title>
+</head>
+
+<body onload="docReady()">
+    <img id="nobita" src="https://a.wattpad.com/cover/199781267-352-k802851.jpg" style="position:absolute;left:0; top:0;" height="300" width="240" />
+
+</body>
+
+</html>
+
+<script>
+    function upArrowPress() {
+        let ele = document.getElementById('nobita');
+        ele.style.top = parseInt(ele.style.top) - 5 + 'px';
+    }
+
+    function downArrowPress() {
+        let ele = document.getElementById('nobita');
+        ele.style.top = parseInt(ele.style.top) + 5 + 'px';
+    }
+
+    function leftArrowPress() {
+        let ele = document.getElementById('nobita');
+        ele.style.left = parseInt(ele.style.left) - 5 + 'px';
+    }
+
+    function rightArrowPress() {
+        let ele = document.getElementById('nobita');
+        ele.style.left = parseInt(ele.style.left) + 5 + 'px';
+    }
+
+    function moveSelection(evt) {
+        switch (evt.keyCode) {
+            case 87:
+            case 38:
+                upArrowPress();
+                break;
+            case 40:
+            case 83:
+                downArrowPress();
+                break;
+            case 37:
+            case 65:
+                leftArrowPress();
+                break;
+            case 39:
+            case 68:
+                rightArrowPress();
+                break;
+        }
+    }
+
+    function docReady() {
+        window.addEventListener('keydown', moveSelection);
+    }
+</script>
